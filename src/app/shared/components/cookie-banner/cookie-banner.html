@@ -1,0 +1,21 @@
+@if (visible()) {
+  <aside class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+    <div class="cookie-panel surface-panel">
+      <div class="cookie-copy">
+        <h2 id="cookie-title" class="text-subtitle-small">{{ 'COOKIE.TITLE' | translate }}</h2>
+        <p id="cookie-desc" class="text-regular-small">{{ 'COOKIE.DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="cookie-actions">
+        <zen-button variant="primary" (pressed)="acceptAll()">
+          {{ 'COOKIE.ACCEPT_ALL' | translate }}
+        </zen-button>
+        <zen-button variant="outline" (pressed)="reject()">
+          {{ 'COOKIE.REJECT' | translate }}
+        </zen-button>
+        <zen-button variant="link" (pressed)="openSettings()">
+          {{ 'COOKIE.SETTINGS' | translate }}
+        </zen-button>
+      </div>
+    </div>
+  </aside>
+}

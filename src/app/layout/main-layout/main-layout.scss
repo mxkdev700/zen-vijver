@@ -1,0 +1,37 @@
+.layout-root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  // Keep the photo vivid; only a light veil at the very top/bottom for UI contrast.
+  background:
+    linear-gradient(
+      180deg,
+      rgba(247, 249, 246, 0.18) 0%,
+      rgba(247, 249, 246, 0.04) 22%,
+      rgba(247, 249, 246, 0.06) 70%,
+      rgba(247, 249, 246, 0.22) 100%
+    ),
+    url('/images/zenvijver-bg.png') center / cover no-repeat;
+  background-color: var(--zen-bg);
+}
+
+.layout-main {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 auto;
+}
+
+zen-header,
+zen-footer,
+zen-cookie-banner {
+  position: relative;
+  z-index: 2;
+}

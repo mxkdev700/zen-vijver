@@ -1,0 +1,45 @@
+.equipment-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.equipment-card {
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 1rem;
+  background: color-mix(in srgb, #fff 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--zen-water) 18%, transparent);
+  box-shadow: 0 12px 30px rgba(13, 62, 38, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.equipment-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1.1rem;
+  border-radius: 0.45rem;
+  background: var(--zen-water-soft);
+  color: var(--zen-water);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.equipment-title {
+  margin: 0 0 0.75rem;
+}
+
+.equipment-text {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--zen-ink);
+}
+
+@media (min-width: 768px) {
+  .equipment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+  }
+}

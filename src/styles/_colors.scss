@@ -1,0 +1,23 @@
+// ZenVijver color palette
+:root {
+  --zen-bg: #f7f9f6;
+  --zen-primary: #0d3e26;
+  --zen-secondary: #3b7a57;
+  --zen-accent: #e2b13c;
+  --zen-water: #41929e;
+
+  --zen-secondary-soft: #eaf5ee;
+  --zen-water-soft: #e5f4f6;
+  --zen-accent-soft: #fff6dd;
+
+  --zen-text: var(--zen-primary);
+  --zen-text-muted: #2f6d4a;
+  --zen-ink: #1f5c3c;
+  --zen-border: rgba(13, 62, 38, 0.14);
+}
+
+$zen-primary: #0d3e26;
+$zen-secondary: #3b7a57;
+$zen-accent: #e2b13c;
+$zen-water: #41929e;
+$zen-bg: #f7f9f6;

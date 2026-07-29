@@ -1,0 +1,52 @@
+<section class="home-hero">
+  <div class="container hero-content av-animate-up">
+    <h1 class="text-subtitle-medium">{{ 'HOME.HERO_TITLE' | translate }}</h1>
+    <p class="text-regular-big hero-lead">{{ 'HOME.HERO_LEAD' | translate }}</p>
+
+    <div class="hero-about" aria-labelledby="about-title">
+      <h2 id="about-title" class="text-title-small hero-about-title">
+        {{ 'HOME.ABOUT_TITLE' | translate }}
+      </h2>
+      <p class="text-regular-medium hero-about-text">{{ 'HOME.ABOUT_TEXT' | translate }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy-section" aria-labelledby="philosophy-title">
+  <div class="container">
+    <h2 id="philosophy-title" class="text-title-medium philosophy-title av-animate-up">
+      {{ 'HOME.PHILOSOPHY_TITLE' | translate }}
+    </h2>
+
+    <div class="philosophy-grid">
+      @for (item of principles; track item.titleKey; let i = $index) {
+        <article class="philosophy-tile av-animate-up" [style.animation-delay.ms]="i * 90">
+          <span class="philosophy-icon" aria-hidden="true">
+            @switch (item.icon) {
+              @case ('logo') {
+                <img
+                  class="philosophy-logo"
+                  src="/images/zenvijver-logo.svg"
+                  width="48"
+                  height="48"
+                  alt=""
+                />
+              }
+              @case ('precision') {
+                <i class="bi bi-gear-wide-connected"></i>
+              }
+              @case ('materials') {
+                <i class="bi bi-flower1"></i>
+              }
+              @case ('trust') {
+                <i class="bi bi-water"></i>
+              }
+            }
+          </span>
+          <h3 class="text-title-tiny philosophy-tile-title">{{ item.titleKey | translate }}</h3>
+          <p class="text-regular-medium philosophy-tile-text">{{ item.textKey | translate }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

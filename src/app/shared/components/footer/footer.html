@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img
+          class="footer-logo"
+          src="/images/zenvijver-logo.svg"
+          width="80"
+          height="80"
+          alt="ZenVijver"
+        />
+        <p class="text-title-small mb-0">ZenVijver</p>
+      </div>
+      <p class="text-regular-small mb-0 mt-2">{{ 'FOOTER.ABOUT' | translate }}</p>
+    </div>
+
+    <div>
+      <h2 class="text-title-tiny footer-title">{{ 'FOOTER.QUICK_LINKS' | translate }}</h2>
+      <ul class="footer-links text-regular-medium">
+        @for (link of quickLinks; track link.path) {
+          <li>
+            <a [routerLink]="link.path">{{ link.labelKey | translate }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-title-tiny footer-title">{{ 'FOOTER.CONTACT' | translate }}</h2>
+      <ul class="footer-contact text-regular-medium">
+        <li>
+          <i class="bi bi-geo-alt" aria-hidden="true"></i>
+          <span>{{ 'COMPANY.ADDRESS' | translate }}</span>
+        </li>
+        <li>
+          <i class="bi bi-telephone" aria-hidden="true"></i>
+          <a href="tel:777777777">{{ 'COMPANY.PHONE' | translate }}</a>
+        </li>
+        <li>
+          <i class="bi bi-envelope" aria-hidden="true"></i>
+          <a href="mailto:info@zenvijver.nl">{{ 'COMPANY.EMAIL' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom text-regular-small">
+    <p class="mb-0">© {{ year }} ZenVijver. {{ 'FOOTER.RIGHTS' | translate }}</p>
+    <p class="mb-0">{{ 'FOOTER.AVG_NOTE' | translate }}</p>
+  </div>
+</footer>

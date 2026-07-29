@@ -1,0 +1,28 @@
+<section class="page-shell section-block">
+  <div class="container">
+    <header class="page-header content-glass av-animate-up">
+      <h1 class="text-title-big">{{ 'EQUIPMENT.TITLE' | translate }}</h1>
+      <p class="text-regular-big mb-0">{{ 'EQUIPMENT.SUBTITLE' | translate }}</p>
+    </header>
+
+    <div class="equipment-grid">
+      @for (section of sections; track section.id; let i = $index) {
+        <article
+          class="equipment-card av-animate-up"
+          [attr.id]="section.id"
+          [style.animation-delay.ms]="i * 80"
+        >
+          <span class="equipment-icon" aria-hidden="true">
+            <i class="bi" [class]="section.icon"></i>
+          </span>
+          <h2 class="text-title-tiny equipment-title">
+            {{ section.titleKey | translate }}
+          </h2>
+          <p class="text-regular-medium equipment-text">
+            {{ section.textKey | translate }}
+          </p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

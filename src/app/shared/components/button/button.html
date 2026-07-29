@@ -1,0 +1,9 @@
+<button
+  [type]="nativeType()"
+  [class]="classes()"
+  [disabled]="disabled()"
+  [attr.role]="role()"
+  (click)="onClick($event)"
+>
+  <ng-content />
+</button>

@@ -1,0 +1,42 @@
+<section class="page-shell section-block">
+  <div class="container">
+    <header class="page-header content-glass av-animate-up">
+      <h1 class="text-title-big">{{ 'GALLERY.TITLE' | translate }}</h1>
+      <p class="text-regular-big mb-0">{{ 'GALLERY.SUBTITLE' | translate }}</p>
+    </header>
+
+    @if (hasItems()) {
+      <div class="gallery-list">
+        @for (item of items(); track item.id; let i = $index) {
+          <article class="gallery-item av-animate-up" [style.animation-delay.ms]="i * 80">
+            <h2 class="text-title-tiny gallery-item-title">
+              {{ item.titleKey | translate }}
+            </h2>
+
+            <img [src]="item.imageUrl" [alt]="item.altKey | translate" loading="lazy" />
+
+            <div class="gallery-item-body">
+              <p class="text-regular-medium gallery-item-text">{{ item.textKey | translate }}</p>
+
+              <dl class="gallery-specs">
+                @for (spec of specsFor(item); track spec.labelKey) {
+                  <div class="gallery-spec">
+                    <span class="gallery-spec-icon" aria-hidden="true">
+                      <i class="bi" [class]="spec.icon"></i>
+                    </span>
+                    <div class="gallery-spec-content">
+                      <dt class="text-ui-small">{{ spec.labelKey | translate }}</dt>
+                      <dd class="text-regular-medium">{{ spec.valueKey | translate }}</dd>
+                    </div>
+                  </div>
+                }
+              </dl>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <p class="text-regular-small">{{ 'GALLERY.EMPTY' | translate }}</p>
+    }
+  </div>
+</section>

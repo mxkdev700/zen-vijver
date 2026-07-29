@@ -1,0 +1,55 @@
+@if (concept(); as item) {
+  <section class="page-shell section-block">
+    <div class="container">
+      <div class="detail-toolbar av-animate-up">
+        <zen-button link="/ponds" variant="outline" size="md">
+          ← {{ 'PONDS.BACK' | translate }}
+        </zen-button>
+      </div>
+
+      <article class="detail-panel av-animate-up">
+        <header class="detail-header">
+          <h1 class="text-title-big detail-title">{{ item.titleKey | translate }}</h1>
+        </header>
+
+        <img
+          class="detail-image"
+          [src]="item.imageUrl"
+          [alt]="item.altKey | translate"
+          loading="eager"
+        />
+
+        <p class="text-regular-medium detail-text">{{ item.textKey | translate }}</p>
+
+        <section class="specs" aria-labelledby="specs-title">
+          <h2 id="specs-title" class="text-title-tiny specs-title">
+            {{ 'PONDS.SPECS_TITLE' | translate }}
+          </h2>
+
+          <dl class="specs-list">
+            @for (spec of specs(); track spec.labelKey) {
+              <div class="specs-row">
+                <span class="specs-icon" aria-hidden="true">
+                  <i class="bi" [class]="spec.icon"></i>
+                </span>
+                <div class="specs-content">
+                  <dt class="text-ui-small">{{ spec.labelKey | translate }}</dt>
+                  <dd class="text-regular-medium">{{ spec.valueKey | translate }}</dd>
+                </div>
+              </div>
+            }
+          </dl>
+        </section>
+
+        <div class="detail-actions">
+          <zen-button link="/ponds" variant="outline" size="lg">
+            ← {{ 'PONDS.BACK' | translate }}
+          </zen-button>
+          <zen-button link="/contact" variant="primary" size="lg">
+            {{ 'PONDS.CTA_QUOTE' | translate }}
+          </zen-button>
+        </div>
+      </article>
+    </div>
+  </section>
+}

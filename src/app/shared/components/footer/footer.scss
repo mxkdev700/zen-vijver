@@ -1,0 +1,73 @@
+.site-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+  padding: 3.5rem 0 1.75rem;
+  background: color-mix(in srgb, #fff 78%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--zen-water) 20%, transparent);
+  backdrop-filter: blur(16px);
+  color: var(--zen-primary);
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2.25rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-logo {
+  width: 4.75rem;
+  height: 4.75rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-title {
+  margin-bottom: 0.9rem;
+}
+
+.footer-links,
+.footer-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.footer-contact li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.footer-contact i {
+  color: var(--zen-secondary);
+  margin-top: 0.15rem;
+}
+
+.footer-bottom {
+  margin-top: 2.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid color-mix(in srgb, var(--zen-water) 22%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1.2fr;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,71 @@
+<form class="av-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="text-ui-small form-label" for="quote-name">{{ 'QUOTE.FORM.NAME' | translate }}</label>
+      <input id="quote-name" class="form-control" formControlName="name" autocomplete="name" />
+      @if ((controls.name.touched || submitted()) && controls.name.invalid) {
+        <div class="invalid-feedback">{{ 'QUOTE.FORM.ERRORS.NAME' | translate }}</div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label class="text-ui-small form-label" for="quote-email">{{ 'QUOTE.FORM.EMAIL' | translate }}</label>
+      <input id="quote-email" type="email" class="form-control" formControlName="email" autocomplete="email" />
+      @if ((controls.email.touched || controls.phone.touched || submitted()) && form.hasError('emailOrPhone')) {
+        <div class="invalid-feedback">{{ 'QUOTE.FORM.ERRORS.EMAIL_OR_PHONE' | translate }}</div>
+      } @else if ((controls.email.touched || submitted()) && controls.email.hasError('email')) {
+        <div class="invalid-feedback">{{ 'QUOTE.FORM.ERRORS.EMAIL' | translate }}</div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label class="text-ui-small form-label" for="quote-phone">{{ 'QUOTE.FORM.PHONE' | translate }}</label>
+      <input id="quote-phone" type="tel" class="form-control" formControlName="phone" autocomplete="tel" />
+      @if ((controls.email.touched || controls.phone.touched || submitted()) && form.hasError('emailOrPhone')) {
+        <div class="invalid-feedback">{{ 'QUOTE.FORM.ERRORS.EMAIL_OR_PHONE' | translate }}</div>
+      } @else if ((controls.phone.touched || submitted()) && controls.phone.hasError('phone')) {
+        <div class="invalid-feedback">{{ 'QUOTE.FORM.ERRORS.PHONE' | translate }}</div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label class="text-ui-small form-label" for="quote-type">{{ 'QUOTE.FORM.PROJECT_TYPE' | translate }}</label>
+      <select id="quote-type" class="form-select" formControlName="projectType">
+        <option value="">{{ 'QUOTE.FORM.PROJECT_TYPE_PLACEHOLDER' | translate }}</option>
+        @for (type of projectTypes; track type.value) {
+          <option [value]="type.value">{{ type.labelKey | translate }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label class="text-ui-small form-label" for="quote-location">{{ 'QUOTE.FORM.LOCATION' | translate }}</label>
+      <input id="quote-location" class="form-control" formControlName="location" />
+    </div>
+
+    <div class="col-md-6">
+      <label class="text-ui-small form-label" for="quote-budget">{{ 'QUOTE.FORM.BUDGET' | translate }}</label>
+      <input id="quote-budget" class="form-control" formControlName="budget" />
+    </div>
+
+    <div class="col-12">
+      <label class="text-ui-small form-label" for="quote-details">{{ 'QUOTE.FORM.DETAILS' | translate }}</label>
+      <textarea id="quote-details" class="form-control" rows="5" formControlName="details"></textarea>
+      @if ((controls.details.touched || submitted()) && controls.details.invalid) {
+        <div class="invalid-feedback">{{ 'QUOTE.FORM.ERRORS.DETAILS' | translate }}</div>
+      }
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <zen-button type="submit" variant="secondary">
+      {{ 'QUOTE.FORM.SUBMIT' | translate }}
+    </zen-button>
+  </div>
+
+  @if (submitSuccess()) {
+    <div class="alert alert-success mt-3 mb-0" role="status">
+      {{ 'QUOTE.FORM.SUCCESS' | translate }}
+    </div>
+  }
+</form>

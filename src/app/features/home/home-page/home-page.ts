@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Button } from '../../../shared/components/button/button';
 
 type PhilosophyIcon = 'logo' | 'precision' | 'materials' | 'trust';
 
 @Component({
   selector: 'zen-home-page',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, Button],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })

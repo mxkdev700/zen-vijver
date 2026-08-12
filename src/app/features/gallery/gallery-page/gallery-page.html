@@ -19,7 +19,7 @@
               <p class="text-regular-medium gallery-item-text">{{ item.textKey | translate }}</p>
 
               <dl class="gallery-specs">
-                @for (spec of specsFor(item); track spec.labelKey) {
+                @for (spec of item.specs; track spec.labelKey) {
                   <div class="gallery-spec">
                     <span class="gallery-spec-icon" aria-hidden="true">
                       <i class="bi" [class]="spec.icon"></i>

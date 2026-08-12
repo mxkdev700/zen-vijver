@@ -1,18 +1,19 @@
 import { Component, computed, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
+export interface GallerySpec {
+  icon: string;
+  labelKey: string;
+  valueKey: string;
+}
+
 export interface GalleryItem {
   id: string;
   titleKey: string;
   textKey: string;
   imageUrl: string;
   altKey: string;
-  locationKey: string;
-  depthKey: string;
-  volumeKey: string;
-  materialKey: string;
-  energyKey: string;
-  priceKey: string;
+  specs: GallerySpec[];
 }
 
 @Component({
@@ -29,12 +30,23 @@ export class GalleryPage {
       textKey: 'GALLERY.ITEM_1_TEXT',
       altKey: 'GALLERY.ITEM_1_ALT',
       imageUrl: 'images/organische-vijver.png',
-      locationKey: 'GALLERY.ITEM_1_LOCATION',
-      depthKey: 'GALLERY.ITEM_1_DEPTH',
-      volumeKey: 'GALLERY.ITEM_1_VOLUME',
-      materialKey: 'GALLERY.ITEM_1_MATERIAL',
-      energyKey: 'GALLERY.ITEM_1_ENERGY',
-      priceKey: 'GALLERY.ITEM_1_PRICE',
+      specs: [
+        {
+          icon: 'bi-geo-alt',
+          labelKey: 'GALLERY.SPEC_SITE',
+          valueKey: 'GALLERY.ITEM_1_LOCATION',
+        },
+        {
+          icon: 'bi-bounding-box',
+          labelKey: 'GALLERY.SPEC_AREA',
+          valueKey: 'GALLERY.ITEM_1_AREA',
+        },
+        {
+          icon: 'bi-layers',
+          labelKey: 'GALLERY.SPEC_MATERIAL',
+          valueKey: 'GALLERY.ITEM_1_MATERIAL',
+        },
+      ],
     },
     {
       id: 'gelaagde-watervalvijver',
@@ -42,26 +54,41 @@ export class GalleryPage {
       textKey: 'GALLERY.ITEM_2_TEXT',
       altKey: 'GALLERY.ITEM_2_ALT',
       imageUrl: 'images/gelaagde-watervalvijver.png',
-      locationKey: 'GALLERY.ITEM_2_LOCATION',
-      depthKey: 'GALLERY.ITEM_2_DEPTH',
-      volumeKey: 'GALLERY.ITEM_2_VOLUME',
-      materialKey: 'GALLERY.ITEM_2_MATERIAL',
-      energyKey: 'GALLERY.ITEM_2_ENERGY',
-      priceKey: 'GALLERY.ITEM_2_PRICE',
+      specs: [
+        {
+          icon: 'bi-geo-alt',
+          labelKey: 'GALLERY.SPEC_LOCATION',
+          valueKey: 'GALLERY.ITEM_2_LOCATION',
+        },
+        {
+          icon: 'bi-arrows-vertical',
+          labelKey: 'GALLERY.SPEC_DEPTH',
+          valueKey: 'GALLERY.ITEM_2_DEPTH',
+        },
+        {
+          icon: 'bi-droplet',
+          labelKey: 'GALLERY.SPEC_VOLUME',
+          valueKey: 'GALLERY.ITEM_2_VOLUME',
+        },
+        {
+          icon: 'bi-layers',
+          labelKey: 'GALLERY.SPEC_MATERIAL',
+          valueKey: 'GALLERY.ITEM_2_MATERIAL',
+        },
+        {
+          icon: 'bi-lightning-charge',
+          labelKey: 'GALLERY.SPEC_ENERGY',
+          valueKey: 'GALLERY.ITEM_2_ENERGY',
+        },
+        {
+          icon: 'bi-currency-euro',
+          labelKey: 'GALLERY.SPEC_PRICE',
+          valueKey: 'GALLERY.ITEM_2_PRICE',
+        },
+      ],
     },
   ]);
 
   readonly items = this.itemsSignal.asReadonly();
   readonly hasItems = computed(() => this.itemsSignal().length > 0);
-
-  specsFor(item: GalleryItem) {
-    return [
-      { icon: 'bi-geo-alt', labelKey: 'GALLERY.SPEC_LOCATION', valueKey: item.locationKey },
-      { icon: 'bi-arrows-vertical', labelKey: 'GALLERY.SPEC_DEPTH', valueKey: item.depthKey },
-      { icon: 'bi-droplet', labelKey: 'GALLERY.SPEC_VOLUME', valueKey: item.volumeKey },
-      { icon: 'bi-layers', labelKey: 'GALLERY.SPEC_MATERIAL', valueKey: item.materialKey },
-      { icon: 'bi-lightning-charge', labelKey: 'GALLERY.SPEC_ENERGY', valueKey: item.energyKey },
-      { icon: 'bi-currency-euro', labelKey: 'GALLERY.SPEC_PRICE', valueKey: item.priceKey },
-    ];
-  }
 }

@@ -1,6 +1,6 @@
 {
   "BRAND": {
-    "TAGLINE": "Levendige zen-vijvers voor uw tuin"
+    "TAGLINE": "Een stukje natuur in uw eigen tuin"
   },
   "LANG": {
     "NL": "Nederlands",
@@ -42,7 +42,8 @@
     "CTA_QUOTE": "Offerte aanvragen",
     "CTA_GALLERY": "Bekijk galerij",
     "ABOUT_TITLE": "Wie zijn wij",
-    "ABOUT_TEXT": "Wij zijn een klein, hecht team van gepassioneerde vakmensen met een transparante en rechtlijnige aanpak. Onze vakmensen beschikken over diepgaande ervaring in essentieel grondverzet, precisie-steenlegging, complex loodgieterswerk en veilige elektrotechniek. Wij zijn inmiddels twee jaar actief in Nederland en hebben met trots al 15 succesvolle vijverprojecten opgeleverd, variërend in type, stijl en formaat. Wij bouwen geen standaard waterpartijen; wij creëren levende kunstwerken die technisch perfect functioneren. Wij combineren frisse materialen, heldere filtratie en natuurlijke lijnen tot vijvers die jarenlang meegaan — en glimlachen.",
+    "ABOUT_TEXT": "Wij zijn een klein, hecht team van gepassioneerde vakmensen, gespecialiseerd in de aanleg van natuurlijke vijvers en zwemvijvers. Onze vakmensen beschikken over diepgaande ervaring in essentieel grondverzet, precisie-steenlegging, complex loodgieterswerk en veilige elektrotechniek. Wij kunnen het hele project turnkey voor u uitvoeren of u helpen met specifieke complexe werkzaamheden.",
+    "ABOUT_TEXT_2": "Al twee jaar werken we in Nederland en hebben we met trots 15 succesvolle vijverprojecten opgeleverd — uiteenlopend in type, stijl en formaat. Wij bouwen geen standaard waterpartijen; in plaats daarvan creëren we levende kunstwerken die technisch perfect functioneren. Frisse materialen, heldere filtratie en natuurlijke lijnen maken vijvers mogelijk die jarenlang meegaan — en glimlachen.",
     "PHILOSOPHY_TITLE": "Onze Filosofie",
     "PHILOSOPHY_1_TITLE": "Harmonie in Ontwerp",
     "PHILOSOPHY_1_TEXT": "Evenwichtige vormen, rustige lijnen en een natuurlijke overgang tussen water en tuin — zodat elke vijver organisch in zijn omgeving past.",
@@ -51,7 +52,11 @@
     "PHILOSOPHY_3_TITLE": "Prioriteit voor Natuurlijke Materialen",
     "PHILOSOPHY_3_TEXT": "Duurzame keuzes in steen, beplanting en afwerking die met de tuin meegroeien en de natuurlijke uitstraling versterken.",
     "PHILOSOPHY_4_TITLE": "Transparantie & Zekerheid",
-    "PHILOSOPHY_4_TEXT": "Duidelijke afspraken, eerlijke communicatie en een oplevering waarop u kunt vertrouwen — van eerste schets tot nazorg."
+    "PHILOSOPHY_4_TEXT": "Duidelijke afspraken, eerlijke communicatie en een oplevering waarop u kunt vertrouwen — van eerste schets tot nazorg.",
+    "PROCESS_TITLE": "Hoe wij werken",
+    "PROCESS_TEXT": "Elk project begint met een bezoek op locatie: we bekijken de tuin, de bodem en uw wensen, en werken daaruit een concreet plan met planning en kostenraming. Tijdens de aanleg stemmen we af op wat de situatie vraagt, houden u op de hoogte van de voortgang en leveren pas op wanneer alles klopt.",
+    "PROCESS_INVITE": "Hebt u al een duidelijk plan? Of hebt u alleen het idee dat u iets bijzonders met uw tuin wilt doen? Wij denken met u mee. Neem contact met ons op voor een vrijblijvende kennismaking.",
+    "PROCESS_CTA": "Gratis adviesgesprek aanvragen"
   },
   "PONDS": {
     "TITLE": "Vijverconcepten",
@@ -110,20 +115,19 @@
     "SUBTITLE": "Een selectie van gerealiseerde projecten.",
     "EMPTY": "Nog geen afbeeldingen beschikbaar.",
     "SPEC_LOCATION": "Provincie",
+    "SPEC_SITE": "Locatie",
     "SPEC_DEPTH": "Diepte",
+    "SPEC_AREA": "Oppervlakte",
     "SPEC_VOLUME": "Watervolume",
     "SPEC_MATERIAL": "Materiaal",
     "SPEC_ENERGY": "Energieverbruik / maand",
     "SPEC_PRICE": "Prijs",
-    "ITEM_1_TITLE": "Organische vijver",
-    "ITEM_1_ALT": "Aanleg van een organische vijver met natuurlijke rivierkeien",
-    "ITEM_1_TEXT": "Voor dit project wilde de klant een vijver die eruitziet alsof hij altijd al deel uitmaakte van de natuur. Geen strakke lijnen, maar pure, organische vormen. Onze aanpak begon met secuur grondverzet, waarna we hoogwaardig beschermdoek en duurzame EPDM-folie hebben aangebracht als ijzersterke basis. Vervolgens hebben we gekozen voor een intensief stuk vakmanschap: het handmatig sorteren en leggen van natuurlijke rivierkeien. Elke steen is met de hand geplaatst en verankerd met een speciale, milieuvriendelijke vijvermortel die bestand is tegen vorst en waterdruk. Het resultaat is een oase van rust, gebouwd met puur maatwerk en oog voor detail.",
-    "ITEM_1_LOCATION": "Overijssel",
-    "ITEM_1_DEPTH": "60–110 cm",
-    "ITEM_1_VOLUME": "Circa 12 m³",
-    "ITEM_1_MATERIAL": "EPDM-folie, beschermdoek en rivierkeien",
-    "ITEM_1_ENERGY": "Circa 18–25 kWh",
-    "ITEM_1_PRICE": "€14.500",
+    "ITEM_1_TITLE": "Aanleg en renovatie van een organische vijver van 80 m²",
+    "ITEM_1_ALT": "Renovatie van een organische vijver van circa 80 m² met EPDM en natuursteen",
+    "ITEM_1_TEXT": "De opdracht bestond uit het leegpompen en renoveren van een oude vijver van ongeveer 80 m².\n\nVitalii reageerde snel op onze aanvraag via Werkspot. Na de bezichtiging van de locatie kwamen we snel tot een overeenkomst. Alle afspraken werden vastgelegd in een overeenkomst, inclusief garantie op het uitgevoerde werk.\n\nVitalii werkte hard en verwijderde snel een laag van ongeveer 10 cm bestaande uit waterplanten en door de wind aangevoerd zand. Daarna bleek dat de oude vijverfolie aanzienlijk slechter was dan we aanvankelijk hadden gedacht. Vitalii adviseerde daarom om deze te vervangen door EPDM en nam ook het extra werk op zich. Ondanks de extra kosten bleek dit een juiste en professionele beslissing.\n\nNu kunnen we zelf in onze vijver zwemmen, wat we gezien het warme weer inmiddels al meerdere keren hebben gedaan.\n\nAls onderdeel van ons project heeft Vitalii ook een mooie beekloop van natuursteen aangelegd, de beplanting verzorgd en alle benodigde apparatuur geïnstalleerd.\n\nWat wij daarnaast erg waardeerden, is dat Vital beschikt over een uitgebreide kennis en een eigen netwerk van materialen en apparatuur voor het aanleggen en renoveren van waterlandschappen. Van kleine onderdelen en verbruiksmaterialen tot professionele filtersystemen, pompen en UV-apparatuur voor vijvers. Hierdoor konden alle oplossingen voor ons project op een professionele en complete manier worden gerealiseerd, zonder dat we verschillende specialisten en leveranciers hoefden te zoeken.\n\nOok na afronding van het project is Vitalii altijd beschikbaar voor advies en hulp.",
+    "ITEM_1_LOCATION": "Drenthe, Linde",
+    "ITEM_1_AREA": "80 m²",
+    "ITEM_1_MATERIAL": "EPDM-folie, natuursteen beekloop en beplanting",
     "ITEM_2_TITLE": "Gelaagde Watervalvijver",
     "ITEM_2_ALT": "Aanleg van een gelaagde watervalvijver met leistenen mozaïek",
     "ITEM_2_TEXT": "Voor dit exclusieve project vroeg de klant om een dynamisch waterspel met meerdere niveaus, geïnspireerd op een natuurlijke bergstroom. We hebben gekozen voor een gelaagde opbouw met terras-plateaus. De echte uitdaging lag in het artistieke metselwerk: het handmatig sorteren en in een waaiervormig mozaïekpatroon leggen van platte, gelaagde leistenen. Elke steenlaag is nauwkeurig uitgelijnd met een speciale, vorstbestendige vijvermortel om een harmonieus patroon van vloeiende lijnen te creëren. Dit structurele vakmanschap vormt straks de perfecte basis voor een trapsgewijze waterval die voor een rustgevend kabbelend geluid en een optimale zuurstofvoorziening van het water zorgt.",

@@ -42,13 +42,57 @@
   margin: 0;
   line-height: 1.75;
   color: var(--zen-ink);
+
+  & + & {
+    margin-top: 1rem;
+  }
 }
 
 .philosophy-section {
   position: relative;
   z-index: 1;
   padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.process-section {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(0.5rem, 1.5vw, 1rem);
   padding-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.process-panel {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  text-align: center;
+  background: color-mix(in srgb, #fff 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--zen-primary) 12%, transparent);
+  border-radius: 1rem;
+  box-shadow: 0 14px 40px rgba(13, 62, 38, 0.09);
+  backdrop-filter: blur(16px);
+}
+
+.process-title {
+  margin: 0 0 1rem;
+  color: var(--zen-primary);
+  letter-spacing: 0.06em;
+}
+
+.process-text {
+  margin: 0 0 1.15rem;
+  line-height: 1.75;
+  color: var(--zen-ink);
+  text-align: left;
+}
+
+.process-invite {
+  margin: 0 0 1.5rem;
+  line-height: 1.75;
+  color: var(--zen-ink);
+  text-align: left;
 }
 
 .philosophy-title {

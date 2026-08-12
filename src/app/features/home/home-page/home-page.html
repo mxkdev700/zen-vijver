@@ -8,6 +8,7 @@
         {{ 'HOME.ABOUT_TITLE' | translate }}
       </h2>
       <p class="text-regular-medium hero-about-text">{{ 'HOME.ABOUT_TEXT' | translate }}</p>
+      <p class="text-regular-medium hero-about-text">{{ 'HOME.ABOUT_TEXT_2' | translate }}</p>
     </div>
   </div>
 </section>
@@ -47,6 +48,21 @@
           <p class="text-regular-medium philosophy-tile-text">{{ item.textKey | translate }}</p>
         </article>
       }
+    </div>
+  </div>
+</section>
+
+<section class="process-section" aria-labelledby="process-title">
+  <div class="container">
+    <div class="process-panel av-animate-up">
+      <h2 id="process-title" class="text-title-medium process-title">
+        {{ 'HOME.PROCESS_TITLE' | translate }}
+      </h2>
+      <p class="text-regular-medium process-text">{{ 'HOME.PROCESS_TEXT' | translate }}</p>
+      <p class="text-regular-medium process-invite">{{ 'HOME.PROCESS_INVITE' | translate }}</p>
+      <zen-button link="/contact" variant="primary" size="lg">
+        {{ 'HOME.PROCESS_CTA' | translate }}
+      </zen-button>
     </div>
   </div>
 </section>

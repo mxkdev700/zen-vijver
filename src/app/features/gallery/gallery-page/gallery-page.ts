@@ -13,6 +13,7 @@ export interface GalleryItem {
   textKey: string;
   imageUrl: string;
   altKey: string;
+  introKey?: string;
   specs: GallerySpec[];
 }
 
@@ -29,6 +30,7 @@ export class GalleryPage {
       titleKey: 'GALLERY.ITEM_1_TITLE',
       textKey: 'GALLERY.ITEM_1_TEXT',
       altKey: 'GALLERY.ITEM_1_ALT',
+      introKey: 'GALLERY.ITEM_1_INTRO',
       imageUrl: 'images/organische-vijver.png',
       specs: [
         {

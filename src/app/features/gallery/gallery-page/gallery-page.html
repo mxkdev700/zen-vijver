@@ -16,6 +16,11 @@
             <img [src]="item.imageUrl" [alt]="item.altKey | translate" loading="lazy" />
 
             <div class="gallery-item-body">
+              @if (item.introKey) {
+                <p class="text-regular-medium gallery-item-intro">
+                  {{ item.introKey | translate }}
+                </p>
+              }
               <p class="text-regular-medium gallery-item-text">{{ item.textKey | translate }}</p>
 
               <dl class="gallery-specs">

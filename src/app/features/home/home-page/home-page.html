@@ -1,7 +1,19 @@
 <section class="home-hero">
   <div class="container hero-content av-animate-up">
-    <h1 class="text-subtitle-medium">{{ 'HOME.HERO_TITLE' | translate }}</h1>
-    <p class="text-regular-big hero-lead">{{ 'HOME.HERO_LEAD' | translate }}</p>
+    <div class="hero-intro">
+      <div class="hero-intro-copy">
+        <h1 class="text-subtitle-medium">{{ 'HOME.HERO_TITLE' | translate }}</h1>
+        <p class="text-regular-big hero-lead">{{ 'HOME.HERO_LEAD' | translate }}</p>
+      </div>
+      <img
+        class="hero-intro-image"
+        src="images/home-hero-zen-pond.png"
+        width="1024"
+        height="683"
+        [alt]="'HOME.HERO_IMAGE_ALT' | translate"
+        loading="eager"
+      />
+    </div>
 
     <div class="hero-about" aria-labelledby="about-title">
       <h2 id="about-title" class="text-title-small hero-about-title">

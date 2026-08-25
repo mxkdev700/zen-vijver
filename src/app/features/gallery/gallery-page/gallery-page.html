@@ -13,7 +13,12 @@
               {{ item.titleKey | translate }}
             </h2>
 
-            <img [src]="item.imageUrl" [alt]="item.altKey | translate" loading="lazy" />
+            <img
+              class="gallery-item-hero"
+              [src]="item.imageUrl"
+              [alt]="item.altKey | translate"
+              loading="lazy"
+            />
 
             <div class="gallery-item-body">
               @if (item.introKey) {
@@ -22,6 +27,25 @@
                 </p>
               }
               <p class="text-regular-medium gallery-item-text">{{ item.textKey | translate }}</p>
+
+              @if (item.afterTextImages?.length) {
+                <div class="gallery-item-extra-images">
+                  @for (photo of item.afterTextImages; track photo.imageUrl) {
+                    <figure class="gallery-item-extra-figure">
+                      <img
+                        [src]="photo.imageUrl"
+                        [alt]="photo.altKey | translate"
+                        loading="lazy"
+                      />
+                      @if (photo.captionKey) {
+                        <figcaption class="text-regular-small gallery-item-extra-caption">
+                          {{ photo.captionKey | translate }}
+                        </figcaption>
+                      }
+                    </figure>
+                  }
+                </div>
+              }
 
               <dl class="gallery-specs">
                 @for (spec of item.specs; track spec.labelKey) {

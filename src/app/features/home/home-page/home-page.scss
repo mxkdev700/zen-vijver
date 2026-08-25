@@ -18,7 +18,14 @@
   color: var(--zen-primary);
 }
 
-.hero-content .text-subtitle-medium {
+.hero-intro {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.hero-intro-copy .text-subtitle-medium {
   max-width: 28ch;
   margin-bottom: 0.85rem;
 }
@@ -26,6 +33,36 @@
 .hero-lead {
   max-width: 38ch;
   margin-bottom: 0;
+}
+
+.hero-intro-image {
+  display: block;
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .hero-intro {
+    grid-template-columns: minmax(16rem, 1fr) minmax(0, 1.2fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-intro-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding-right: 0.25rem;
+  }
+
+  .hero-intro-image {
+    width: 75%;
+    height: auto;
+    margin: 0 0 0 2rem;
+  }
 }
 
 .hero-about {

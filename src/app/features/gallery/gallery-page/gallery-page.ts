@@ -7,6 +7,12 @@ export interface GallerySpec {
   valueKey: string;
 }
 
+export interface GalleryExtraImage {
+  imageUrl: string;
+  altKey: string;
+  captionKey?: string;
+}
+
 export interface GalleryItem {
   id: string;
   titleKey: string;
@@ -14,6 +20,7 @@ export interface GalleryItem {
   imageUrl: string;
   altKey: string;
   introKey?: string;
+  afterTextImages?: GalleryExtraImage[];
   specs: GallerySpec[];
 }
 
@@ -32,6 +39,18 @@ export class GalleryPage {
       altKey: 'GALLERY.ITEM_1_ALT',
       introKey: 'GALLERY.ITEM_1_INTRO',
       imageUrl: 'images/organische-vijver.png',
+      afterTextImages: [
+        {
+          imageUrl: 'images/organische-vijver-detail-1.png',
+          altKey: 'GALLERY.ITEM_1_DETAIL_1_ALT',
+          captionKey: 'GALLERY.ITEM_1_DETAIL_1_CAPTION',
+        },
+        {
+          imageUrl: 'images/organische-vijver-detail-2.png',
+          altKey: 'GALLERY.ITEM_1_DETAIL_2_ALT',
+          captionKey: 'GALLERY.ITEM_1_DETAIL_2_CAPTION',
+        },
+      ],
       specs: [
         {
           icon: 'bi-geo-alt',

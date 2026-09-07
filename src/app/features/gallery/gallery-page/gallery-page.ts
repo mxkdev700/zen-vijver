@@ -13,6 +13,13 @@ export interface GalleryExtraImage {
   captionKey?: string;
 }
 
+export interface GalleryProcessStep {
+  imageUrl: string;
+  altKey: string;
+  titleKey: string;
+  textKey: string;
+}
+
 export interface GalleryItem {
   id: string;
   titleKey: string;
@@ -112,4 +119,25 @@ export class GalleryPage {
 
   readonly items = this.itemsSignal.asReadonly();
   readonly hasItems = computed(() => this.itemsSignal().length > 0);
+
+  readonly processSteps: GalleryProcessStep[] = [
+    {
+      imageUrl: 'images/basin-build-step-1.jpg',
+      altKey: 'GALLERY.PROCESS_STEP_1_ALT',
+      titleKey: 'GALLERY.PROCESS_STEP_1_TITLE',
+      textKey: 'GALLERY.PROCESS_STEP_1_TEXT',
+    },
+    {
+      imageUrl: 'images/basin-build-step-2.jpg',
+      altKey: 'GALLERY.PROCESS_STEP_2_ALT',
+      titleKey: 'GALLERY.PROCESS_STEP_2_TITLE',
+      textKey: 'GALLERY.PROCESS_STEP_2_TEXT',
+    },
+    {
+      imageUrl: 'images/basin-build-step-3.jpg',
+      altKey: 'GALLERY.PROCESS_STEP_3_ALT',
+      titleKey: 'GALLERY.PROCESS_STEP_3_TITLE',
+      textKey: 'GALLERY.PROCESS_STEP_3_TEXT',
+    },
+  ];
 }

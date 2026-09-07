@@ -5,6 +5,32 @@
       <p class="text-regular-big mb-0">{{ 'GALLERY.SUBTITLE' | translate }}</p>
     </header>
 
+    <section class="gallery-process content-glass av-animate-up" aria-labelledby="gallery-process-title">
+      <h2 id="gallery-process-title" class="text-title-small gallery-process-title">
+        {{ 'GALLERY.PROCESS_TITLE' | translate }}
+      </h2>
+
+      <div class="gallery-process-list">
+        @for (step of processSteps; track step.imageUrl; let i = $index) {
+          <figure class="gallery-process-step" [style.animation-delay.ms]="i * 90">
+            <img
+              [src]="step.imageUrl"
+              [alt]="step.altKey | translate"
+              loading="lazy"
+            />
+            <figcaption class="gallery-process-caption">
+              <h3 class="text-title-tiny gallery-process-step-title">
+                {{ step.titleKey | translate }}
+              </h3>
+              <p class="text-regular-medium gallery-process-step-text">
+                {{ step.textKey | translate }}
+              </p>
+            </figcaption>
+          </figure>
+        }
+      </div>
+    </section>
+
     @if (hasItems()) {
       <div class="gallery-list">
         @for (item of items(); track item.id; let i = $index) {

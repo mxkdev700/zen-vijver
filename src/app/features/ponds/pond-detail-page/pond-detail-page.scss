@@ -23,17 +23,33 @@
 .detail-image {
   display: block;
   width: 100%;
-  max-height: min(52vh, 32rem);
-  margin: 0 0 1.5rem;
-  object-fit: cover;
+  height: auto;
+  margin: 0;
   border-radius: 0.65rem;
 }
 
+.detail-copy {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  margin: 1.5rem 0 2.5rem;
+  padding: clamp(1.15rem, 2.5vw, 1.75rem);
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, #fff 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--zen-primary) 10%, transparent);
+}
+
 .detail-text {
-  margin: 0 0 2rem;
-  max-width: 70ch;
-  line-height: 1.75;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  line-height: 1.85;
   color: var(--zen-ink);
+  text-wrap: pretty;
+}
+
+.specs {
+  padding-top: 0.25rem;
 }
 
 .specs-title {

@@ -1,7 +1,7 @@
 import { Component, computed, effect, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs';
 import { Button } from '../../../shared/components/button/button';
 import { PondConceptsService } from '../pond-concepts/pond-concepts.service';
@@ -15,6 +15,7 @@ import { PondConceptsService } from '../pond-concepts/pond-concepts.service';
 export class PondDetailPage {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly translate = inject(TranslateService);
   private readonly pondConcepts = inject(PondConceptsService);
 
   private readonly conceptId = toSignal(
@@ -22,10 +23,41 @@ export class PondDetailPage {
     { initialValue: '' },
   );
 
-  readonly concept = computed(() => this.pondConcepts.getById(this.conceptId()));
+  private readonly variantId = toSignal(
+    this.route.paramMap.pipe(map((params) => params.get('variantId'))),
+    { initialValue: null as string | null },
+  );
+
+  readonly detail = computed(() =>
+    this.pondConcepts.getDetail(this.conceptId(), this.variantId()),
+  );
+
+  readonly backLink = computed(() => {
+    const variantId = this.variantId();
+    const conceptId = this.conceptId();
+    return variantId ? `/ponds/${conceptId}` : '/ponds';
+  });
+
+  readonly backLabelKey = computed(() =>
+    this.variantId() ? 'PONDS.BACK_TO_VARIANTS' : 'PONDS.BACK',
+  );
+
+  readonly descriptionParagraphs = computed(() => {
+    this.translate.currentLang();
+    const item = this.detail();
+    if (!item) {
+      return [];
+    }
+
+    return this.translate
+      .instant(item.textKey)
+      .split(/\n\n+/)
+      .map((part: string) => part.trim())
+      .filter(Boolean);
+  });
 
   readonly specs = computed(() => {
-    const item = this.concept();
+    const item = this.detail();
     if (!item) {
       return [];
     }
@@ -45,10 +77,22 @@ export class PondDetailPage {
 
   constructor() {
     effect(() => {
-      const id = this.conceptId();
-      if (id && !this.pondConcepts.getById(id)) {
-        void this.router.navigateByUrl('/ponds');
+      const conceptId = this.conceptId();
+      const variantId = this.variantId();
+      if (!conceptId) {
+        return;
       }
+
+      if (this.pondConcepts.getDetail(conceptId, variantId)) {
+        return;
+      }
+
+      if (this.pondConcepts.hasVariants(conceptId)) {
+        void this.router.navigateByUrl(`/ponds/${conceptId}`);
+        return;
+      }
+
+      void this.router.navigateByUrl('/ponds');
     });
   }
 }

@@ -1,9 +1,9 @@
-@if (concept(); as item) {
+@if (detail(); as item) {
   <section class="page-shell section-block">
     <div class="container">
       <div class="detail-toolbar av-animate-up">
-        <zen-button link="/ponds" variant="outline" size="md">
-          ← {{ 'PONDS.BACK' | translate }}
+        <zen-button [link]="backLink()" variant="outline" size="md">
+          ← {{ backLabelKey() | translate }}
         </zen-button>
       </div>
 
@@ -19,7 +19,11 @@
           loading="eager"
         />
 
-        <p class="text-regular-medium detail-text">{{ item.textKey | translate }}</p>
+        <div class="detail-copy">
+          @for (paragraph of descriptionParagraphs(); track $index) {
+            <p class="text-regular-medium detail-text">{{ paragraph }}</p>
+          }
+        </div>
 
         <section class="specs" aria-labelledby="specs-title">
           <h2 id="specs-title" class="text-title-tiny specs-title">
@@ -42,8 +46,8 @@
         </section>
 
         <div class="detail-actions">
-          <zen-button link="/ponds" variant="outline" size="lg">
-            ← {{ 'PONDS.BACK' | translate }}
+          <zen-button [link]="backLink()" variant="outline" size="lg">
+            ← {{ backLabelKey() | translate }}
           </zen-button>
           <zen-button link="/contact" variant="primary" size="lg">
             {{ 'PONDS.CTA_QUOTE' | translate }}

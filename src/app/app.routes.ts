@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { pondHasVariantsGuard } from './core/guards/pond-route.guards';
 import { MainLayout } from './layout/main-layout/main-layout';
 
 export const routes: Routes = [
@@ -16,6 +17,21 @@ export const routes: Routes = [
         path: 'ponds',
         loadComponent: () =>
           import('./features/ponds/ponds-page/ponds-page').then((m) => m.PondsPage),
+        title: 'ZenVijver · Vijverconcepten',
+      },
+      {
+        path: 'ponds/:id/:variantId',
+        loadComponent: () =>
+          import('./features/ponds/pond-detail-page/pond-detail-page').then(
+            (m) => m.PondDetailPage,
+          ),
+        title: 'ZenVijver · Vijverconcepten',
+      },
+      {
+        path: 'ponds/:id',
+        canMatch: [pondHasVariantsGuard],
+        loadComponent: () =>
+          import('./features/ponds/pond-hub-page/pond-hub-page').then((m) => m.PondHubPage),
         title: 'ZenVijver · Vijverconcepten',
       },
       {

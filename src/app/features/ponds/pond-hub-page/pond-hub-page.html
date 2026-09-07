@@ -1,0 +1,34 @@
+@if (concept(); as item) {
+  <section class="page-shell section-block">
+    <div class="container">
+      <div class="hub-toolbar av-animate-up">
+        <zen-button link="/ponds" variant="outline" size="md">
+          ← {{ 'PONDS.BACK' | translate }}
+        </zen-button>
+      </div>
+
+      <header class="page-header content-glass av-animate-up">
+        <h1 class="text-title-big">{{ item.titleKey | translate }}</h1>
+      </header>
+
+      <div class="hub-grid">
+        @for (variant of variants(); track variant.id; let i = $index) {
+          <a
+            class="hub-card av-animate-up"
+            [routerLink]="['/ponds', item.id, variant.id]"
+            [style.animation-delay.ms]="i * 80"
+          >
+            <h2 class="text-title-tiny hub-card-title">
+              {{ variant.titleKey | translate }}
+            </h2>
+            <img
+              [src]="variant.imageUrl"
+              [alt]="variant.altKey | translate"
+              loading="lazy"
+            />
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+}

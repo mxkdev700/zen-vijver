@@ -1,11 +1,15 @@
-.ponds-grid {
+.hub-toolbar {
+  margin-bottom: 1.25rem;
+}
+
+.hub-grid {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr;
   align-items: stretch;
 }
 
-.pond-card {
+.hub-card {
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -24,14 +28,14 @@
     border-color 0.3s ease;
 }
 
-.pond-card:hover {
+.hub-card:hover {
   transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--zen-water) 35%, transparent);
   box-shadow: 0 16px 36px rgba(13, 62, 38, 0.14);
   color: inherit;
 }
 
-.pond-card-title {
+.hub-card-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -43,7 +47,7 @@
   line-height: 1.25;
 }
 
-.pond-card img {
+.hub-card img {
   display: block;
   width: calc(100% - 2.5rem);
   height: auto;
@@ -55,18 +59,12 @@
   transition: transform 0.45s ease;
 }
 
-.pond-card:hover img {
+.hub-card:hover img {
   transform: scale(1.03);
 }
 
 @media (min-width: 768px) {
-  .ponds-grid {
+  .hub-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1200px) {
-  .ponds-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

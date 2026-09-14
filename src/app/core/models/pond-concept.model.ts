@@ -20,6 +20,8 @@ export interface PondConcept {
   titleKey: string;
   altKey: string;
   imageUrl: string;
+  /** Optional list-card image; falls back to imageUrl. */
+  cardImageUrl?: string;
   /** Present for concepts without variants (single detail page). */
   textKey?: string;
   depthKey?: string;

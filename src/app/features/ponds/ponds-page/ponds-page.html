@@ -15,7 +15,11 @@
           <h2 class="text-title-tiny pond-card-title">
             {{ item.titleKey | translate }}
           </h2>
-          <img [src]="item.imageUrl" [alt]="item.altKey | translate" loading="lazy" />
+          <img
+            [src]="item.cardImageUrl || item.imageUrl"
+            [alt]="item.altKey | translate"
+            loading="lazy"
+          />
         </a>
       }
     </div>

@@ -38,6 +38,7 @@ export class PondConceptsService {
       textKey: 'PONDS.ITEM_2_TEXT',
       altKey: 'PONDS.ITEM_2_ALT',
       imageUrl: 'images/koivijver.png',
+      cardImageUrl: 'images/koivijver-card.png',
       depthKey: 'PONDS.ITEM_2_DEPTH',
       minSizeKey: 'PONDS.ITEM_2_MIN_SIZE',
       volumeKey: 'PONDS.ITEM_2_VOLUME',

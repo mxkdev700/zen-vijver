@@ -1,9 +1,53 @@
 <div class="layout-root">
   <div class="site-backdrop" aria-hidden="true">
-    <span class="site-backdrop__glow site-backdrop__glow--a"></span>
-    <span class="site-backdrop__glow site-backdrop__glow--b"></span>
-    <span class="site-backdrop__ripple"></span>
+    <div class="site-backdrop__mesh"></div>
+
+    <span
+      class="site-backdrop__orb site-backdrop__orb--a"
+      [style.transform]="layerTransform(0.12, 1.1)"
+    ></span>
+    <span
+      class="site-backdrop__orb site-backdrop__orb--b"
+      [style.transform]="layerTransform(0.08, 0.8)"
+    ></span>
+    <span
+      class="site-backdrop__orb site-backdrop__orb--c"
+      [style.transform]="layerTransform(0.18, 1.4)"
+    ></span>
+
+    <span
+      class="site-backdrop__blob site-backdrop__blob--a"
+      [style.transform]="layerTransform(0.06, 0.6)"
+    ></span>
+    <span
+      class="site-backdrop__blob site-backdrop__blob--b"
+      [style.transform]="layerTransform(0.14, 0.9)"
+    ></span>
+
+    <span class="site-backdrop__grid" [style.transform]="layerTransform(0.04, 0.25)"></span>
+    <span class="site-backdrop__rings" [style.transform]="layerTransform(0.1, 0.7)"></span>
+
+    <svg
+      class="site-backdrop__waves"
+      viewBox="0 0 1440 240"
+      preserveAspectRatio="none"
+      [style.transform]="layerTransform(0.05, 0.2)"
+    >
+      <path
+        class="site-backdrop__wave site-backdrop__wave--a"
+        d="M0,130 C220,190 460,50 720,110 C980,170 1220,70 1440,120 L1440,240 L0,240 Z"
+      />
+      <path
+        class="site-backdrop__wave site-backdrop__wave--b"
+        d="M0,160 C260,110 520,200 780,150 C1040,100 1260,180 1440,140 L1440,240 L0,240 Z"
+      />
+      <path
+        class="site-backdrop__wave site-backdrop__wave--c"
+        d="M0,190 C240,160 480,210 740,180 C1000,150 1240,210 1440,175 L1440,240 L0,240 Z"
+      />
+    </svg>
   </div>
+
   <zen-header />
   <main class="layout-main">
     <router-outlet />

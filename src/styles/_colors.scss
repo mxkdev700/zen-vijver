@@ -1,28 +1,29 @@
-// ZenVijver — cool water / forest atelier (no cream, no purple)
+// ZenVijver — bold studio water (vivid, not swampy)
 :root {
-  --zen-bg: #e7eef0;
-  --zen-bg-deep: #d5e3e6;
-  --zen-primary: #0b2f28;
-  --zen-secondary: #2f6b5a;
-  --zen-accent: #b8892d;
-  --zen-water: #2f7d8a;
-  --zen-mist: #f3f7f8;
+  --zen-bg: #dff7f4;
+  --zen-bg-deep: #b8ebe8;
+  --zen-primary: #022c2a;
+  --zen-secondary: #0f9f8a;
+  --zen-accent: #f5a524;
+  --zen-water: #07b6d5;
+  --zen-mist: #f3fffd;
+  --zen-glow: #5eead4;
 
-  --zen-secondary-soft: #dcece7;
-  --zen-water-soft: #d7ebef;
-  --zen-accent-soft: #f4ead2;
+  --zen-secondary-soft: #c8f5eb;
+  --zen-water-soft: #c5f4ff;
+  --zen-accent-soft: #ffe8b5;
 
   --zen-text: var(--zen-primary);
-  --zen-text-muted: #3d665c;
-  --zen-ink: #174439;
-  --zen-border: rgba(11, 47, 40, 0.12);
+  --zen-text-muted: #1f6f66;
+  --zen-ink: #064e49;
+  --zen-border: rgba(2, 44, 42, 0.11);
 
-  --zen-surface: color-mix(in srgb, var(--zen-mist) 92%, transparent);
-  --zen-surface-strong: color-mix(in srgb, #fff 94%, transparent);
+  --zen-surface: color-mix(in srgb, var(--zen-mist) 90%, transparent);
+  --zen-surface-strong: color-mix(in srgb, #fff 97%, transparent);
 }
 
-$zen-primary: #0b2f28;
-$zen-secondary: #2f6b5a;
-$zen-accent: #b8892d;
-$zen-water: #2f7d8a;
-$zen-bg: #e7eef0;
+$zen-primary: #022c2a;
+$zen-secondary: #0f9f8a;
+$zen-accent: #f5a524;
+$zen-water: #07b6d5;
+$zen-bg: #dff7f4;

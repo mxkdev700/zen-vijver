@@ -12,11 +12,11 @@
   max-width: 100%;
   margin: 0;
   border: 1.5px solid transparent;
-  border-radius: 0.55rem;
+  border-radius: 999px;
   font-family: var(--av-font-body);
   font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -38,56 +38,59 @@
 
 .av-button--sm {
   min-height: 2.25rem;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.1rem;
   font-size: 0.85rem;
 }
 
 .av-button--md {
-  min-height: 2.65rem;
-  padding: 0.55rem 1.35rem;
+  min-height: 2.7rem;
+  padding: 0.55rem 1.45rem;
 }
 
 .av-button--lg {
-  min-height: 3.1rem;
-  padding: 0.75rem 1.65rem;
+  min-height: 3.2rem;
+  padding: 0.8rem 1.8rem;
   font-size: 1rem;
 }
 
 .av-button--primary {
-  color: #fff;
-  background: var(--zen-primary);
-  border-color: var(--zen-primary);
+  color: var(--zen-primary);
+  background: linear-gradient(120deg, var(--zen-accent), #ffc14d);
+  border-color: transparent;
+  box-shadow: 0 12px 28px rgba(245, 165, 36, 0.32);
 }
 
 .av-button--primary:hover:not(:disabled) {
-  color: #fff;
-  background: color-mix(in srgb, var(--zen-primary) 88%, var(--zen-water));
-  border-color: color-mix(in srgb, var(--zen-primary) 88%, var(--zen-water));
-  transform: translateY(-1px);
+  color: var(--zen-primary);
+  background: linear-gradient(120deg, #ffb12a, #ffd06a);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(245, 165, 36, 0.42);
 }
 
 .av-button--primary:active:not(:disabled) {
   transform: translateY(0);
-  background: var(--zen-ink);
-  border-color: var(--zen-ink);
+  color: #fff;
+  background: var(--zen-primary);
+  box-shadow: none;
 }
 
 .av-button--secondary {
   color: #fff;
-  background: var(--zen-water);
-  border-color: var(--zen-water);
+  background: linear-gradient(120deg, var(--zen-water), var(--zen-secondary));
+  border-color: transparent;
 }
 
 .av-button--secondary:hover:not(:disabled) {
   color: #fff;
-  background: var(--zen-secondary);
-  border-color: var(--zen-secondary);
+  filter: brightness(1.05);
+  transform: translateY(-1px);
 }
 
 .av-button--outline {
   color: var(--zen-primary);
-  background: transparent;
-  border-color: color-mix(in srgb, var(--zen-primary) 45%, transparent);
+  background: rgba(255, 255, 255, 0.45);
+  border-color: color-mix(in srgb, var(--zen-primary) 35%, transparent);
+  backdrop-filter: blur(8px);
 }
 
 .av-button--outline:hover:not(:disabled) {
@@ -103,8 +106,8 @@
   border-radius: 0.35rem;
   background: transparent;
   color: var(--zen-text-muted);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0;
   text-decoration: underline;
 }
 

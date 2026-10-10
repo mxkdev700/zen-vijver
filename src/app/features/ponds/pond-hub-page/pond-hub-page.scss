@@ -16,10 +16,13 @@
   height: 100%;
   margin: 0;
   overflow: hidden;
-  border-radius: var(--av-radius);
-  background: var(--zen-surface-strong);
-  border: 1px solid var(--zen-border);
+  border-radius: 1.5rem 1.1rem 1.5rem 1.1rem;
+  background:
+    linear-gradient(160deg, rgba(7, 182, 213, 0.1), transparent 42%),
+    var(--zen-surface-strong);
+  border: 1px solid color-mix(in srgb, var(--zen-water) 24%, var(--zen-border));
   box-shadow: var(--av-shadow-soft);
+  backdrop-filter: blur(8px);
   color: inherit;
   transition:
     transform 0.35s ease,

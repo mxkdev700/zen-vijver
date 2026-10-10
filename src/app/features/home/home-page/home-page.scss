@@ -47,7 +47,7 @@
   margin: 0 0 1rem;
   max-width: 16ch;
   color: #f7fbfa;
-  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
 }
 
 .hero-lead {
@@ -146,19 +146,31 @@
 }
 
 .philosophy-tile {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100%;
   padding: clamp(1.5rem, 2.8vw, 2rem);
-  background: var(--zen-surface-strong);
-  border: 1px solid var(--zen-border);
-  border-radius: var(--av-radius-sm);
-  border-top: 3px solid color-mix(in srgb, var(--zen-water) 65%, transparent);
+  background:
+    linear-gradient(165deg, rgba(7, 182, 213, 0.1), transparent 45%),
+    var(--zen-surface-strong);
+  border: 1px solid color-mix(in srgb, var(--zen-water) 22%, var(--zen-border));
+  border-radius: 1.4rem 0.9rem 1.4rem 0.9rem;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
   transition:
-    transform 0.35s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s ease,
     border-color 0.35s ease;
+}
+
+.philosophy-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--zen-water), var(--zen-secondary), var(--zen-accent));
 }
 
 .philosophy-tile:hover {

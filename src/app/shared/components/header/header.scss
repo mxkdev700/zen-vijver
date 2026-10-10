@@ -3,9 +3,10 @@
   inset: 0 0 auto;
   z-index: 1030;
   height: var(--av-header-height);
-  background: color-mix(in srgb, var(--zen-mist) 78%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--zen-primary) 8%, transparent);
-  backdrop-filter: blur(16px) saturate(1.1);
+  background: color-mix(in srgb, #fff 72%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--zen-water) 18%, transparent);
+  backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 10px 30px rgba(2, 44, 42, 0.05);
 }
 
 .header-inner {

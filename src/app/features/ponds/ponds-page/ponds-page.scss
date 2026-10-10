@@ -6,21 +6,45 @@
 }
 
 .pond-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  border-radius: var(--av-radius);
-  background: var(--zen-surface-strong);
-  border: 1px solid var(--zen-border);
+  border-radius: 1.5rem 1.1rem 1.5rem 1.1rem;
+  background:
+    linear-gradient(160deg, rgba(7, 182, 213, 0.12), transparent 42%),
+    var(--zen-surface-strong);
+  border: 1px solid color-mix(in srgb, var(--zen-water) 26%, var(--zen-border));
   box-shadow: var(--av-shadow-soft);
   color: inherit;
+  backdrop-filter: blur(8px);
   transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
     border-color 0.35s ease;
+}
+
+.pond-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--zen-water), var(--zen-secondary), var(--zen-accent));
+}
+
+.pond-card::after {
+  content: '';
+  position: absolute;
+  right: -18%;
+  bottom: -22%;
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 165, 36, 0.14), transparent 70%);
+  pointer-events: none;
 }
 
 .pond-card:hover {

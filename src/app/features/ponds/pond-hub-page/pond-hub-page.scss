@@ -16,22 +16,21 @@
   height: 100%;
   margin: 0;
   overflow: hidden;
-  border-radius: 1rem;
-  background: color-mix(in srgb, #fff 92%, transparent);
-  border: 1px solid color-mix(in srgb, var(--zen-water) 18%, transparent);
-  box-shadow: 0 12px 30px rgba(13, 62, 38, 0.1);
-  backdrop-filter: blur(10px);
+  border-radius: var(--av-radius);
+  background: var(--zen-surface-strong);
+  border: 1px solid var(--zen-border);
+  box-shadow: var(--av-shadow-soft);
   color: inherit;
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .hub-card:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--zen-water) 35%, transparent);
-  box-shadow: 0 16px 36px rgba(13, 62, 38, 0.14);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--zen-water) 40%, transparent);
+  box-shadow: var(--av-shadow-lift);
   color: inherit;
 }
 

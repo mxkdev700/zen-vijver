@@ -12,11 +12,11 @@
   max-width: 100%;
   margin: 0;
   border: 1.5px solid transparent;
-  border-radius: 999px;
+  border-radius: 0.55rem;
   font-family: var(--av-font-body);
   font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -26,6 +26,7 @@
     border-color var(--av-transition),
     color var(--av-transition),
     transform var(--av-transition),
+    box-shadow var(--av-transition),
     opacity var(--av-transition);
   appearance: none;
 }
@@ -43,55 +44,56 @@
 
 .av-button--md {
   min-height: 2.65rem;
-  padding: 0.55rem 1.45rem;
+  padding: 0.55rem 1.35rem;
 }
 
 .av-button--lg {
   min-height: 3.1rem;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.65rem;
   font-size: 1rem;
 }
 
 .av-button--primary {
-  color: var(--zen-primary);
-  background: var(--zen-accent);
-  border-color: var(--zen-accent);
-}
-
-.av-button--primary:hover:not(:disabled) {
-  color: var(--zen-primary);
-  background: #ebb84a;
-  border-color: #ebb84a;
-}
-
-.av-button--primary:active:not(:disabled) {
   color: #fff;
   background: var(--zen-primary);
   border-color: var(--zen-primary);
+}
+
+.av-button--primary:hover:not(:disabled) {
+  color: #fff;
+  background: color-mix(in srgb, var(--zen-primary) 88%, var(--zen-water));
+  border-color: color-mix(in srgb, var(--zen-primary) 88%, var(--zen-water));
+  transform: translateY(-1px);
+}
+
+.av-button--primary:active:not(:disabled) {
+  transform: translateY(0);
+  background: var(--zen-ink);
+  border-color: var(--zen-ink);
 }
 
 .av-button--secondary {
   color: #fff;
-  background: var(--zen-secondary);
-  border-color: var(--zen-secondary);
+  background: var(--zen-water);
+  border-color: var(--zen-water);
 }
 
 .av-button--secondary:hover:not(:disabled) {
   color: #fff;
-  background: var(--zen-primary);
-  border-color: var(--zen-primary);
+  background: var(--zen-secondary);
+  border-color: var(--zen-secondary);
 }
 
 .av-button--outline {
   color: var(--zen-primary);
   background: transparent;
-  border-color: var(--zen-secondary);
+  border-color: color-mix(in srgb, var(--zen-primary) 45%, transparent);
 }
 
 .av-button--outline:hover:not(:disabled) {
   color: #fff;
-  background: var(--zen-secondary);
-  border-color: var(--zen-secondary);
+  background: var(--zen-primary);
+  border-color: var(--zen-primary);
 }
 
 .av-button--link {

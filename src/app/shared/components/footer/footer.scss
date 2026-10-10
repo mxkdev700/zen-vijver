@@ -1,11 +1,12 @@
 .site-footer {
   position: relative;
   z-index: 2;
-  margin-top: 2rem;
-  padding: 3.5rem 0 1.75rem;
-  background: color-mix(in srgb, #fff 78%, transparent);
-  border-top: 1px solid color-mix(in srgb, var(--zen-water) 20%, transparent);
-  backdrop-filter: blur(16px);
+  margin-top: 1rem;
+  padding: 3.25rem 0 1.75rem;
+  background:
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--zen-primary) 4%, transparent) 30%),
+    color-mix(in srgb, #fff 88%, transparent);
+  border-top: 1px solid var(--zen-border);
   color: var(--zen-primary);
 }
 
@@ -17,12 +18,12 @@
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .footer-logo {
-  width: 4.75rem;
-  height: 4.75rem;
+  width: 4.25rem;
+  height: 4.25rem;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -47,14 +48,14 @@
 }
 
 .footer-contact i {
-  color: var(--zen-secondary);
+  color: var(--zen-water);
   margin-top: 0.15rem;
 }
 
 .footer-bottom {
   margin-top: 2.25rem;
   padding-top: 1.1rem;
-  border-top: 1px solid color-mix(in srgb, var(--zen-water) 22%, transparent);
+  border-top: 1px solid var(--zen-border);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;

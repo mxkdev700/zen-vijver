@@ -3,9 +3,9 @@
   inset: 0 0 auto;
   z-index: 1030;
   height: var(--av-header-height);
-  background: color-mix(in srgb, #fff 72%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--zen-primary) 10%, transparent);
-  backdrop-filter: blur(18px);
+  background: color-mix(in srgb, var(--zen-mist) 78%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--zen-primary) 8%, transparent);
+  backdrop-filter: blur(16px) saturate(1.1);
 }
 
 .header-inner {
@@ -19,14 +19,14 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.15rem;
   color: inherit;
   min-width: 0;
 }
 
 .brand-logo {
-  width: 4.25rem;
-  height: 4.25rem;
+  width: 3.6rem;
+  height: 3.6rem;
   object-fit: contain;
   flex-shrink: 0;
   display: block;
@@ -39,11 +39,13 @@
   min-width: 0;
 
   .text-title-small {
-    font-size: clamp(1.74rem, 3.36vw, 2.22rem);
+    font-size: clamp(1.55rem, 3vw, 1.95rem);
+    letter-spacing: 0.03em;
   }
 
   .brand-tagline {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
   }
 }
 
@@ -58,19 +60,19 @@
 .menu-toggle {
   display: inline-grid;
   place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.65rem;
+  height: 2.65rem;
   border: 1px solid var(--zen-border);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--av-radius-sm);
+  background: rgba(255, 255, 255, 0.78);
   color: var(--zen-primary);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .main-nav {
   display: none;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .main-nav.is-open {
@@ -83,8 +85,8 @@
   align-items: stretch;
   gap: 1rem;
   padding: 1.1rem 1.25rem 1.6rem;
-  background: color-mix(in srgb, #fff 92%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--zen-primary) 10%, transparent);
+  background: color-mix(in srgb, #fff 96%, transparent);
+  border-bottom: 1px solid var(--zen-border);
   box-shadow: var(--av-shadow-soft);
   backdrop-filter: blur(18px);
   animation: av-fade-in 0.35s ease;
@@ -104,7 +106,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0.45rem 0.15rem;
-  color: color-mix(in srgb, var(--zen-ink) 62%, transparent);
+  color: color-mix(in srgb, var(--zen-ink) 58%, transparent);
   font-weight: 500;
   letter-spacing: 0.02em;
   transition: color 0.25s ease;
@@ -113,14 +115,14 @@
 .nav-list a::after {
   content: '';
   position: absolute;
-  left: 50%;
-  bottom: -0.15rem;
+  left: 0;
+  bottom: -0.1rem;
   width: 100%;
   height: 2px;
   border-radius: 999px;
-  background: var(--zen-accent);
-  transform: translateX(-50%) scaleX(0);
-  transform-origin: center;
+  background: linear-gradient(90deg, var(--zen-water), var(--zen-secondary));
+  transform: scaleX(0);
+  transform-origin: left center;
   transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -134,7 +136,7 @@
 }
 
 .nav-list a.is-active::after {
-  transform: translateX(-50%) scaleX(1);
+  transform: scaleX(1);
 }
 
 .main-nav.is-open .nav-list a {
@@ -144,15 +146,8 @@
 }
 
 .main-nav.is-open .nav-list a::after {
-  left: 0;
   bottom: 0.45rem;
   width: 1.75rem;
-  transform: scaleX(0);
-  transform-origin: left center;
-}
-
-.main-nav.is-open .nav-list a.is-active::after {
-  transform: scaleX(1);
 }
 
 .lang-switcher {
@@ -163,10 +158,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.45rem 0.85rem;
+  padding: 0.45rem 0.8rem;
   border: 1px solid var(--zen-border);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.75);
+  border-radius: var(--av-radius-sm);
+  background: rgba(255, 255, 255, 0.78);
   color: var(--zen-ink);
 }
 
@@ -184,7 +179,7 @@
   margin: 0.4rem 0 0;
   padding: 0.35rem;
   border: 1px solid var(--zen-border);
-  border-radius: 0.75rem;
+  border-radius: var(--av-radius-sm);
   background: #fff;
   box-shadow: var(--av-shadow-soft);
 }
@@ -195,7 +190,7 @@
   border: 0;
   background: transparent;
   padding: 0.55rem 0.75rem;
-  border-radius: 0.45rem;
+  border-radius: 0.4rem;
   color: var(--zen-ink);
 }
 
@@ -219,7 +214,7 @@
   .nav-list {
     flex-direction: row;
     align-items: center;
-    gap: 1.35rem;
+    gap: 1.25rem;
   }
 
   .nav-list a {

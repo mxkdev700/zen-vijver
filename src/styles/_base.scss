@@ -1,7 +1,9 @@
 :root {
-  --av-radius: 0.75rem;
-  --av-shadow-soft: 0 20px 50px rgba(65, 146, 158, 0.12);
-  --av-header-height: 5.5rem;
+  --av-radius: 0.85rem;
+  --av-radius-sm: 0.55rem;
+  --av-shadow-soft: 0 18px 48px rgba(11, 47, 40, 0.08);
+  --av-shadow-lift: 0 22px 56px rgba(47, 125, 138, 0.14);
+  --av-header-height: 5.25rem;
   --av-transition: 0.35s ease;
 }
 
@@ -36,7 +38,7 @@ a {
 }
 
 .section-block {
-  padding-block: clamp(4rem, 8vw, 6.5rem);
+  padding-block: clamp(3.5rem, 7vw, 5.75rem);
 }
 
 .page-shell {
@@ -49,25 +51,23 @@ a {
 }
 
 .surface-panel {
-  background: color-mix(in srgb, #fff 86%, transparent);
-  border: 1px solid color-mix(in srgb, var(--zen-water) 22%, transparent);
+  background: var(--zen-surface-strong);
+  border: 1px solid var(--zen-border);
   border-radius: var(--av-radius);
   box-shadow: var(--av-shadow-soft);
-  backdrop-filter: blur(14px);
 }
 
 .content-glass {
-  background: color-mix(in srgb, #fff 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--zen-primary) 10%, transparent);
-  border-radius: 1.15rem;
-  box-shadow: 0 18px 48px rgba(13, 62, 38, 0.1);
-  backdrop-filter: blur(16px);
+  background: var(--zen-surface-strong);
+  border: 1px solid var(--zen-border);
+  border-radius: var(--av-radius);
+  box-shadow: var(--av-shadow-soft);
   padding: clamp(1.35rem, 3vw, 2rem);
 }
 
 .form-control,
 .form-select {
-  border-radius: 0.65rem;
+  border-radius: var(--av-radius-sm);
   border-color: color-mix(in srgb, var(--zen-water) 28%, #fff);
   background: #fff;
 }
@@ -75,7 +75,7 @@ a {
 .form-control:focus,
 .form-select:focus {
   border-color: var(--zen-water);
-  box-shadow: 0 0 0 0.2rem rgba(65, 146, 158, 0.22);
+  box-shadow: 0 0 0 0.2rem rgba(47, 125, 138, 0.2);
 }
 
 .invalid-feedback {
@@ -108,11 +108,11 @@ a {
 .page-header::after {
   content: '';
   display: block;
-  width: 4.5rem;
-  height: 3px;
+  width: 3.5rem;
+  height: 2px;
   margin-top: 1rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--zen-accent), var(--zen-water));
+  background: linear-gradient(90deg, var(--zen-water), var(--zen-secondary));
 }
 
 .page-header.content-glass::after {
@@ -122,7 +122,7 @@ a {
 @keyframes av-fade-up {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -139,29 +139,55 @@ a {
   }
 }
 
-@keyframes zen-float {
+@keyframes zen-drift {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translate3d(2%, -1.5%, 0) scale(1.03);
   }
 }
 
-@keyframes zen-wave-drift {
+@keyframes zen-shimmer {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes zen-rise {
   from {
-    transform: translateX(0);
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
   }
   to {
-    transform: translateX(-60px);
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
 .av-animate-up {
-  animation: av-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: av-fade-up 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .av-animate-in {
   animation: av-fade-in 0.7s ease both;
+}
+
+.av-animate-rise {
+  animation: zen-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .av-animate-up,
+  .av-animate-in,
+  .av-animate-rise,
+  .site-backdrop__glow,
+  .site-backdrop__ripple {
+    animation: none !important;
+  }
 }

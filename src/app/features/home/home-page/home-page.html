@@ -1,26 +1,38 @@
 <section class="home-hero">
-  <div class="container hero-content av-animate-up">
-    <div class="hero-intro">
-      <div class="hero-intro-copy">
-        <h1 class="text-subtitle-medium">{{ 'HOME.HERO_TITLE' | translate }}</h1>
-        <p class="text-regular-big hero-lead">{{ 'HOME.HERO_LEAD' | translate }}</p>
-      </div>
-      <img
-        class="hero-intro-image"
-        src="images/home-hero-zen-pond.jpg"
-        width="1024"
-        height="771"
-        [alt]="'HOME.HERO_IMAGE_ALT' | translate"
-        loading="eager"
-      />
-    </div>
+  <div class="hero-media" aria-hidden="true">
+    <img
+      class="hero-media-image"
+      src="images/home-hero-zen-pond.jpg"
+      width="1024"
+      height="771"
+      alt=""
+      loading="eager"
+    />
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
 
-    <div class="hero-about" aria-labelledby="about-title">
-      <h2 id="about-title" class="text-title-small hero-about-title">
+  <div class="container hero-content av-animate-rise">
+    <h1 class="text-title-huge hero-title">{{ 'HOME.HERO_TITLE' | translate }}</h1>
+    <p class="text-regular-big hero-lead">{{ 'HOME.HERO_LEAD' | translate }}</p>
+    <div class="hero-actions">
+      <zen-button link="/contact" variant="primary" size="lg">
+        {{ 'HOME.CTA_QUOTE' | translate }}
+      </zen-button>
+      <zen-button link="/gallery" variant="outline" size="lg">
+        {{ 'HOME.CTA_GALLERY' | translate }}
+      </zen-button>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-panel av-animate-up">
+      <h2 id="about-title" class="text-title-medium about-title">
         {{ 'HOME.ABOUT_TITLE' | translate }}
       </h2>
-      <p class="text-regular-medium hero-about-text">{{ 'HOME.ABOUT_TEXT' | translate }}</p>
-      <p class="text-regular-medium hero-about-text">{{ 'HOME.ABOUT_TEXT_2' | translate }}</p>
+      <p class="text-regular-medium about-text">{{ 'HOME.ABOUT_TEXT' | translate }}</p>
+      <p class="text-regular-medium about-text">{{ 'HOME.ABOUT_TEXT_2' | translate }}</p>
     </div>
   </div>
 </section>

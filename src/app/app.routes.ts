@@ -48,22 +48,9 @@ export const routes: Routes = [
           import('./features/gallery/gallery-page/gallery-page').then((m) => m.GalleryPage),
         title: 'ZenVijver · Ons Werk',
       },
-      {
-        path: 'equipment',
-        loadComponent: () =>
-          import('./features/equipment/equipment-page/equipment-page').then(
-            (m) => m.EquipmentPage,
-          ),
-        title: 'ZenVijver · Apparatuur',
-      },
-      {
-        path: 'materials',
-        loadComponent: () =>
-          import('./features/materials/materials-page/materials-page').then(
-            (m) => m.MaterialsPage,
-          ),
-        title: 'ZenVijver · Materialen',
-      },
+      // Pages kept in codebase but temporarily unavailable via router.
+      { path: 'equipment', redirectTo: '', pathMatch: 'full' },
+      { path: 'materials', redirectTo: '', pathMatch: 'full' },
       {
         path: 'contact',
         loadComponent: () =>

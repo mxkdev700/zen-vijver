@@ -29,8 +29,6 @@ export class Header {
     { path: '/', labelKey: 'NAV.HOME' },
     { path: '/ponds', labelKey: 'NAV.PONDS' },
     { path: '/gallery', labelKey: 'NAV.GALLERY' },
-    { path: '/equipment', labelKey: 'NAV.EQUIPMENT' },
-    { path: '/materials', labelKey: 'NAV.MATERIALS' },
     { path: '/contact', labelKey: 'NAV.CONTACT' },
   ];
 

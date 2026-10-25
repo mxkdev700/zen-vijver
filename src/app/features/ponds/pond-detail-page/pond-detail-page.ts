@@ -58,20 +58,20 @@ export class PondDetailPage {
 
   readonly specs = computed(() => {
     const item = this.detail();
-    if (!item) {
+    if (!item?.depthKey) {
       return [];
     }
 
     return [
       { icon: 'bi-arrows-vertical', labelKey: 'PONDS.SPEC_DEPTH', valueKey: item.depthKey },
-      { icon: 'bi-rulers', labelKey: 'PONDS.SPEC_MIN_SIZE', valueKey: item.minSizeKey },
-      { icon: 'bi-droplet', labelKey: 'PONDS.SPEC_VOLUME', valueKey: item.volumeKey },
-      { icon: 'bi-lightning-charge', labelKey: 'PONDS.SPEC_ENERGY', valueKey: item.energyKey },
-      { icon: 'bi-gear-wide-connected', labelKey: 'PONDS.SPEC_PUMPS', valueKey: item.pumpsKey },
-      { icon: 'bi-funnel', labelKey: 'PONDS.SPEC_FILTERS', valueKey: item.filtersKey },
-      { icon: 'bi-lightbulb', labelKey: 'PONDS.SPEC_LIGHTING', valueKey: item.lightingKey },
-      { icon: 'bi-tools', labelKey: 'PONDS.SPEC_MAINTENANCE', valueKey: item.maintenanceKey },
-      { icon: 'bi-currency-euro', labelKey: 'PONDS.SPEC_PRICE', valueKey: item.priceKey },
+      { icon: 'bi-rulers', labelKey: 'PONDS.SPEC_MIN_SIZE', valueKey: item.minSizeKey! },
+      { icon: 'bi-droplet', labelKey: 'PONDS.SPEC_VOLUME', valueKey: item.volumeKey! },
+      { icon: 'bi-lightning-charge', labelKey: 'PONDS.SPEC_ENERGY', valueKey: item.energyKey! },
+      { icon: 'bi-gear-wide-connected', labelKey: 'PONDS.SPEC_PUMPS', valueKey: item.pumpsKey! },
+      { icon: 'bi-funnel', labelKey: 'PONDS.SPEC_FILTERS', valueKey: item.filtersKey! },
+      { icon: 'bi-lightbulb', labelKey: 'PONDS.SPEC_LIGHTING', valueKey: item.lightingKey! },
+      { icon: 'bi-tools', labelKey: 'PONDS.SPEC_MAINTENANCE', valueKey: item.maintenanceKey! },
+      { icon: 'bi-currency-euro', labelKey: 'PONDS.SPEC_PRICE', valueKey: item.priceKey! },
     ];
   });
 

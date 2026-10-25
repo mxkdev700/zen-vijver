@@ -20,17 +20,15 @@ export class PondConceptsService {
       id: 'organische-natuurgetrouwe',
       titleKey: 'PONDS.ITEM_1_TITLE',
       textKey: 'PONDS.ITEM_1_TEXT',
+      textAfterKey: 'PONDS.ITEM_1_TEXT_AFTER',
       altKey: 'PONDS.ITEM_1_ALT',
       imageUrl: 'images/organische-natuurgetrouwe-vijver.jpg',
-      depthKey: 'PONDS.ITEM_1_DEPTH',
-      minSizeKey: 'PONDS.ITEM_1_MIN_SIZE',
-      volumeKey: 'PONDS.ITEM_1_VOLUME',
-      energyKey: 'PONDS.ITEM_1_ENERGY',
-      pumpsKey: 'PONDS.ITEM_1_PUMPS',
-      filtersKey: 'PONDS.ITEM_1_FILTERS',
-      lightingKey: 'PONDS.ITEM_1_LIGHTING',
-      maintenanceKey: 'PONDS.ITEM_1_MAINTENANCE',
-      priceKey: 'PONDS.ITEM_1_PRICE',
+      thesesTitleKey: 'PONDS.ITEM_1_THESES_TITLE',
+      theses: [
+        { titleKey: 'PONDS.ITEM_1_THESIS_1_TITLE', textKey: 'PONDS.ITEM_1_THESIS_1_TEXT' },
+        { titleKey: 'PONDS.ITEM_1_THESIS_2_TITLE', textKey: 'PONDS.ITEM_1_THESIS_2_TEXT' },
+        { titleKey: 'PONDS.ITEM_1_THESIS_3_TITLE', textKey: 'PONDS.ITEM_1_THESIS_3_TEXT' },
+      ],
     },
     {
       id: 'koivijver',
@@ -101,7 +99,7 @@ export class PondConceptsService {
       return undefined;
     }
 
-    if (!concept.textKey || !concept.depthKey) {
+    if (!concept.textKey) {
       return undefined;
     }
 
@@ -109,17 +107,20 @@ export class PondConceptsService {
       id: concept.id,
       titleKey: concept.titleKey,
       textKey: concept.textKey,
+      textAfterKey: concept.textAfterKey,
       altKey: concept.altKey,
       imageUrl: concept.imageUrl,
+      thesesTitleKey: concept.thesesTitleKey,
+      theses: concept.theses,
       depthKey: concept.depthKey,
-      minSizeKey: concept.minSizeKey!,
-      volumeKey: concept.volumeKey!,
-      energyKey: concept.energyKey!,
-      pumpsKey: concept.pumpsKey!,
-      filtersKey: concept.filtersKey!,
-      lightingKey: concept.lightingKey!,
-      maintenanceKey: concept.maintenanceKey!,
-      priceKey: concept.priceKey!,
+      minSizeKey: concept.minSizeKey,
+      volumeKey: concept.volumeKey,
+      energyKey: concept.energyKey,
+      pumpsKey: concept.pumpsKey,
+      filtersKey: concept.filtersKey,
+      lightingKey: concept.lightingKey,
+      maintenanceKey: concept.maintenanceKey,
+      priceKey: concept.priceKey,
     };
   }
 }

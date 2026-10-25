@@ -23,27 +23,50 @@
           @for (paragraph of descriptionParagraphs(); track $index) {
             <p class="text-regular-medium detail-text">{{ paragraph }}</p>
           }
+
+          @if (item.theses?.length) {
+            @if (item.thesesTitleKey) {
+              <h2 class="text-ui-small detail-subheading">
+                {{ item.thesesTitleKey | translate }}
+              </h2>
+            }
+
+            <ul class="detail-list">
+              @for (thesis of item.theses; track thesis.titleKey) {
+                <li class="text-regular-medium detail-text">
+                  <strong>{{ thesis.titleKey | translate }}:</strong>
+                  {{ ' ' }}{{ thesis.textKey | translate }}
+                </li>
+              }
+            </ul>
+          }
+
+          @if (item.textAfterKey) {
+            <p class="text-regular-medium detail-text">{{ item.textAfterKey | translate }}</p>
+          }
         </div>
 
-        <section class="specs" aria-labelledby="specs-title">
-          <h2 id="specs-title" class="text-title-tiny specs-title">
-            {{ 'PONDS.SPECS_TITLE' | translate }}
-          </h2>
+        @if (specs().length) {
+          <section class="specs" aria-labelledby="specs-title">
+            <h2 id="specs-title" class="text-title-tiny specs-title">
+              {{ 'PONDS.SPECS_TITLE' | translate }}
+            </h2>
 
-          <dl class="specs-list">
-            @for (spec of specs(); track spec.labelKey) {
-              <div class="specs-row">
-                <span class="specs-icon" aria-hidden="true">
-                  <i class="bi" [class]="spec.icon"></i>
-                </span>
-                <div class="specs-content">
-                  <dt class="text-ui-small">{{ spec.labelKey | translate }}</dt>
-                  <dd class="text-regular-medium">{{ spec.valueKey | translate }}</dd>
+            <dl class="specs-list">
+              @for (spec of specs(); track spec.labelKey) {
+                <div class="specs-row">
+                  <span class="specs-icon" aria-hidden="true">
+                    <i class="bi" [class]="spec.icon"></i>
+                  </span>
+                  <div class="specs-content">
+                    <dt class="text-ui-small">{{ spec.labelKey | translate }}</dt>
+                    <dd class="text-regular-medium">{{ spec.valueKey | translate }}</dd>
+                  </div>
                 </div>
-              </div>
-            }
-          </dl>
-        </section>
+              }
+            </dl>
+          </section>
+        }
 
         <div class="detail-actions">
           <zen-button [link]="backLink()" variant="outline" size="lg">

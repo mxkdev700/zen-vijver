@@ -50,6 +50,28 @@
   text-wrap: pretty;
 }
 
+.detail-subheading {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+  color: var(--zen-primary);
+}
+
+.detail-list {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.detail-list li {
+  padding-left: 0.15rem;
+}
+
+.detail-list strong {
+  font-weight: 700;
+  color: var(--zen-primary);
+}
+
 .specs {
   padding-top: 0.25rem;
 }

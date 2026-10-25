@@ -72,20 +72,6 @@
                   }
                 </div>
               }
-
-              <dl class="gallery-specs">
-                @for (spec of item.specs; track spec.labelKey) {
-                  <div class="gallery-spec">
-                    <span class="gallery-spec-icon" aria-hidden="true">
-                      <i class="bi" [class]="spec.icon"></i>
-                    </span>
-                    <div class="gallery-spec-content">
-                      <dt class="text-ui-small">{{ spec.labelKey | translate }}</dt>
-                      <dd class="text-regular-medium">{{ spec.valueKey | translate }}</dd>
-                    </div>
-                  </div>
-                }
-              </dl>
             </div>
           </article>
         }

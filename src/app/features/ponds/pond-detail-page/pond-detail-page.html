@@ -46,28 +46,6 @@
           }
         </div>
 
-        @if (specs().length) {
-          <section class="specs" aria-labelledby="specs-title">
-            <h2 id="specs-title" class="text-title-tiny specs-title">
-              {{ 'PONDS.SPECS_TITLE' | translate }}
-            </h2>
-
-            <dl class="specs-list">
-              @for (spec of specs(); track spec.labelKey) {
-                <div class="specs-row">
-                  <span class="specs-icon" aria-hidden="true">
-                    <i class="bi" [class]="spec.icon"></i>
-                  </span>
-                  <div class="specs-content">
-                    <dt class="text-ui-small">{{ spec.labelKey | translate }}</dt>
-                    <dd class="text-regular-medium">{{ spec.valueKey | translate }}</dd>
-                  </div>
-                </div>
-              }
-            </dl>
-          </section>
-        }
-
         <div class="detail-actions">
           <zen-button [link]="backLink()" variant="outline" size="lg">
             ← {{ backLabelKey() | translate }}

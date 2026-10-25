@@ -110,15 +110,6 @@ export class PondConceptsService {
       imageUrl: concept.imageUrl,
       thesesTitleKey: concept.thesesTitleKey,
       theses: concept.theses,
-      depthKey: concept.depthKey,
-      minSizeKey: concept.minSizeKey,
-      volumeKey: concept.volumeKey,
-      energyKey: concept.energyKey,
-      pumpsKey: concept.pumpsKey,
-      filtersKey: concept.filtersKey,
-      lightingKey: concept.lightingKey,
-      maintenanceKey: concept.maintenanceKey,
-      priceKey: concept.priceKey,
     };
   }
 }

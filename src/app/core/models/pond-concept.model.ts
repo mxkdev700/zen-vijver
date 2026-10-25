@@ -12,15 +12,6 @@ export interface PondDetailContent {
   imageUrl: string;
   thesesTitleKey?: string;
   theses?: PondThesis[];
-  depthKey?: string;
-  minSizeKey?: string;
-  volumeKey?: string;
-  energyKey?: string;
-  pumpsKey?: string;
-  filtersKey?: string;
-  lightingKey?: string;
-  maintenanceKey?: string;
-  priceKey?: string;
 }
 
 export interface PondConcept {
@@ -35,15 +26,6 @@ export interface PondConcept {
   textAfterKey?: string;
   thesesTitleKey?: string;
   theses?: PondThesis[];
-  depthKey?: string;
-  minSizeKey?: string;
-  volumeKey?: string;
-  energyKey?: string;
-  pumpsKey?: string;
-  filtersKey?: string;
-  lightingKey?: string;
-  maintenanceKey?: string;
-  priceKey?: string;
   /** When set, /ponds/:id shows a hub of tiles instead of a detail page. */
   variants?: PondDetailContent[];
 }

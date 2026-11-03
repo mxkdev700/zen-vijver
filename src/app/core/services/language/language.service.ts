@@ -37,7 +37,7 @@ export class LanguageService {
 
   private readStoredLanguage(): AppLanguage | null {
     const value = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    if (value === 'nl' || value === 'uk' || value === 'ru') {
+    if (value === 'nl' || value === 'en' || value === 'de') {
       return value;
     }
     return null;

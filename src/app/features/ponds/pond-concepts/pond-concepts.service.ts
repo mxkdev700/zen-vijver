@@ -34,7 +34,7 @@ export class PondConceptsService {
       ],
     },
     {
-      id: 'zwemvijver',
+      id: 'zwembad',
       titleKey: 'PONDS.ITEM_3_TITLE',
       altKey: 'PONDS.ITEM_3_ALT',
       imageUrl: 'images/zwemvijver.jpg',
@@ -54,7 +54,7 @@ export class PondConceptsService {
           ],
         },
         {
-          id: 'boerderij',
+          id: 'bostuin',
           titleKey: 'PONDS.ITEM_3B_TITLE',
           textKey: 'PONDS.ITEM_3B_TEXT',
           textAfterKey: 'PONDS.ITEM_3B_TEXT_AFTER',

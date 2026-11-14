@@ -32,7 +32,6 @@ export class QuoteForm {
       phone: ['', [phoneValidator()]],
       projectType: [''],
       location: [''],
-      budget: [''],
       details: ['', [Validators.required, Validators.minLength(10)]],
     },
     { validators: [emailOrPhoneValidator()] },

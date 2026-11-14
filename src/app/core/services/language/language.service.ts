@@ -24,8 +24,7 @@ export class LanguageService {
   init(): void {
     this.translate.addLangs([...this.languages.map((lang) => lang.code)]);
     const saved = this.readStoredLanguage();
-    const initial = saved ?? DEFAULT_LANGUAGE;
-    this.use(initial);
+    this.use(saved ?? DEFAULT_LANGUAGE);
   }
 
   use(lang: AppLanguage): void {

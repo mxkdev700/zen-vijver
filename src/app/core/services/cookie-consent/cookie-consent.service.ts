@@ -21,12 +21,6 @@ export class CookieConsentService {
     this.persist('rejected');
   }
 
-  openSettings(): void {
-    // Settings panel can be expanded later; for AVG compliance we treat
-    // "Settings / Reject" as a non-acceptance path that keeps essential-only cookies.
-    this.persist('rejected');
-  }
-
   reset(): void {
     localStorage.removeItem(COOKIE_CONSENT_STORAGE_KEY);
     this.stateSignal.set({ choice: null, updatedAt: null });

@@ -21,8 +21,4 @@ export class CookieBanner {
   reject(): void {
     this.cookieConsent.reject();
   }
-
-  openSettings(): void {
-    this.cookieConsent.openSettings();
-  }
 }
